@@ -2,7 +2,7 @@
 
 Blockchain implementation from scratch in Go with Kubernetes 
 
-Implement a [IOU](https://en.wikipedia.org/wiki/IOU) system like https://www.splitwise.com/ which keeps track of who ows who and then simplifies the debt. 
+Implement a [IOU](https://en.wikipedia.org/wiki/IOU) system like https://www.splitwise.com/ which keeps track of [who owes who](http://feedback.splitwise.com/forums/162446-general/suggestions/3457936-change-who-owes-who-to-who-owes-whom) and then simplifies the debt. 
 
 ## Key terms in simple words
 
