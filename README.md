@@ -1,7 +1,8 @@
-# Blockchain from Scratch in Go with Kubernetes
+# :construction: Blockchain from Scratch in Go with Kubernetes
 
 Blockchain implementation from scratch in Go with Kubernetes 
 
+Implement a [IOU](https://en.wikipedia.org/wiki/IOU) system like https://www.splitwise.com/ which keeps track of who ows who and then simplifies the debt. 
 
 ## Key terms in simple words
 
