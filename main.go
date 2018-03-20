@@ -6,31 +6,50 @@ import (
 	"github.com/gunjan5/blockchain-from-scratch/block"
 )
 
-const (
-	genesisPrevHash = "0000000000000000000000000000000000000000000000000000000000000000"
-)
-
 func main() {
 
-	txns := block.Transactions{
+	// Initialize the blockchain with the Genesis block.
+	bc := block.NewBlockchain()
+
+	lastSuccessfulBlock := block.GenesisBlock
+
+	lastSuccessfulBlock, _ = addBlock(&bc, block.Transactions{
 		block.Transaction{
-			Owes: "Gunjan",
-			To: "Bob",
+			Owes:   "Gunjan",
+			To:     "Bob",
 			Amount: 4.20,
 		},
 		block.Transaction{
-			Owes: "Elon",
-			To: "Gunjan",
+			Owes:   "Elon",
+			To:     "Gunjan",
 			Amount: 3.14,
 		},
 		block.Transaction{
-			Owes: "Lannister",
-			To: "No-one",
+			Owes:   "Lannister",
+			To:     "No-one",
 			Amount: 1000.0,
 		},
+	}, lastSuccessfulBlock)
+
+	lastSuccessfulBlock, _ = addBlock(&bc, block.Transactions{
+		block.Transaction{
+			Owes:   "Happy",
+			To:     "Lemon",
+			Amount: 4.5,
+		},
+	}, lastSuccessfulBlock)
+
+	fmt.Println("-----------------\nBlockchain:\n-----------------")
+	bc.PrettyPrint()
+
+}
+
+func addBlock(bc *block.Blockchain, txns block.Transactions, lsb block.Block) (block.Block, bool) {
+	b := block.New(lsb.Index+1, lsb.Hash, txns)
+	if bc.Append(b) {
+		lsb = b
+		return lsb, true
 	}
 
-	b := block.New(0, genesisPrevHash, txns)
-
-	fmt.Printf("Genesis block:\n%s\n", b.PrettyPrint())
+	return lsb, false
 }
