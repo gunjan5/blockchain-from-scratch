@@ -14,17 +14,17 @@ Collectively it's called a "ledger".
 
 Blockchain has some key properties that make it ideal for decentralized money aka bitcoin aka cryptocurrency. 
 
-1. Immutable: Things cannot be changed once stored in a block. (It is close to impossible to change something in a blockchain)
+1. **Immutable**: Things cannot be changed once stored in a block. (It is close to impossible to change something in a blockchain)
 
-2. Decentralized: There is no central entity controlling and managing things, so no single point of failure. 
+2. **Decentralized**: There is no central entity controlling and managing things, so no single point of failure. 
                   Every node in the network is empowered and together all the nodes form consensus, which makes
                   it extremely difficult to hack the majority of the nodes to temper the data. 
                   Think of this as direct democracy vs authoritarian rule.
                   
-3. Distributed trust: We may not trust an individual node, but we trust a large group of nodes. An individual node can be
+3. **Distributed trust**: We may not trust an individual node, but we trust a large group of nodes. An individual node can be
                manipulated/hacked but it's close to impossible to do so with so many nodes. Power in numbers.
                
-4. Security: Blockchain uses [public key cryptography](https://medium.com/@vrypan/explaining-public-key-cryptography-to-non-geeks-f0994b3c2d5) and hashing to ensure the data security. 
+4. **Security**: Blockchain uses [public key cryptography](https://medium.com/@vrypan/explaining-public-key-cryptography-to-non-geeks-f0994b3c2d5) and hashing to ensure the data security. 
 
 
 ### Hash
@@ -44,7 +44,7 @@ So, the signature will be different for different data it is signing, however st
 so it can be verified using the special magnifying glass (public key). Due to some complicated cyptography math and computation
 limits it's close to impossible to forge the signature that can be verified using Bob's special magnifying glasses.
 
-### Proof of Work (vs Proof of Stake)
+### Proof of Work
 
 To prevent fraudulent transactions, blockchain requires miners (computers that take part in helping calculate hashes)
 to solve a crypto puzzle - a bunch of miners start solving the puzzle and whoever solves it first wins the transaction fees
@@ -56,12 +56,15 @@ wasting a lot of power. A lot of miners get together in a "mining pool" and when
 share the prize with other miners in the pool, now on the surface this doesn't sound so bad since you're just sharing the prize,
 but if a pool gets big enough, it can have 51% share in a blockchain and can do some serious damage through 51% attack - this also
 defeats the purpose of being "decentralized" if one large pool can control all the transactions. 
-    To solve these shortcomings of the Proof of Work algorithm, another algoritham was proposed called Proof of Stake. 
+  
+### Proof of Stake (vs Proof of Work)
+
+To solve these shortcomings of the Proof of Work algorithm, another algorithm was proposed called Proof of Stake. 
 In Proof of Stake, a miner is selected at random (almost) and then they need to pay some money as a "security deposit" - which is higher
 than the transaction fees you get paid if you solve the puzzle. You get your security deposit back after a certain time - if your 
 transaction is not fraudulent. This solves the problem of not wasting so much electricity compared to Proof of Work since many miners
 spend time and power solving the puzzle but only one answer is used rest of the miners' work is thrown away - waste of power. Another 
 problem this solves is it's very very hard to get 51% stake in the network since it will require enormous "security deposit". 
-There is aan [awesome video](https://www.youtube.com/watch?v=M3EFi_POhps) explaining both of these concepts.
+There is an [awesome video](https://www.youtube.com/watch?v=M3EFi_POhps) explaining both of these concepts.
 
 
