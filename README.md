@@ -44,5 +44,24 @@ So, the signature will be different for different data it is signing, however st
 so it can be verified using the special magnifying glass (public key). Due to some complicated cyptography math and computation
 limits it's close to impossible to forge the signature that can be verified using Bob's special magnifying glasses.
 
-### Proof of Work
+### Proof of Work (vs Proof of Stake)
+
+To prevent fraudulent transactions, blockchain requires miners (computers that take part in helping calculate hashes)
+to solve a crypto puzzle - a bunch of miners start solving the puzzle and whoever solves it first wins the transaction fees
+for that block - (essentially calculate a hash that starts with X number of 0's) which takes time, so the bad person
+can't insert a lot of bad blocks in the blockchain since each one takes some time to solve the puzzle (and computing power).
+Solving this puzzle (having a hash with X number of 0's) is how a miner shows their "proof of work". Now this concept/algorithm 
+has some issues since it favors miners with more computing power (and specialized equipments to calculate the hash faster), essentially
+wasting a lot of power. A lot of miners get together in a "mining pool" and whenever one of them solves and wins the puzzle, they
+share the prize with other miners in the pool, now on the surface this doesn't sound so bad since you're just sharing the prize,
+but if a pool gets big enough, it can have 51% share in a blockchain and can do some serious damage through 51% attack - this also
+defeats the purpose of being "decentralized" if one large pool can control all the transactions. 
+    To solve these shortcomings of the Proof of Work algorithm, another algoritham was proposed called Proof of Stake. 
+In Proof of Stake, a miner is selected at random (almost) and then they need to pay some money as a "security deposit" - which is higher
+than the transaction fees you get paid if you solve the puzzle. You get your security deposit back after a certain time - if your 
+transaction is not fraudulent. This solves the problem of not wasting so much electricity compared to Proof of Work since many miners
+spend time and power solving the puzzle but only one answer is used rest of the miners' work is thrown away - waste of power. Another 
+problem this solves is it's very very hard to get 51% stake in the network since it will require enormous "security deposit". 
+There is aan [awesome video](https://www.youtube.com/watch?v=M3EFi_POhps) explaining both of these concepts.
+
 
